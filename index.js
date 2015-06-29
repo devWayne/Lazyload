@@ -18,12 +18,12 @@ function Lazyload(opt) {
 
 var proto = {
     start: function() {
-        window.addEventListener('scroll', _scroll.bind(this), false);
-        window.addEventListener('resize', _scroll.bind(this), false);
+        window.addEventListener('scroll',_scroll.bind(this), false);
+        window.addEventListener('resize',_scroll.bind(this),false);
     },
     stop: function() {
-        window.removeEventListener('scroll', _scroll.bind(this), false);
-        window.removeEventListener('resize', _scroll.bind(this), false);
+        window.removeEventListener('scroll', _scroll.bind(this),100 false);
+        window.removeEventListener('resize', _scroll.bind(this),100 false);
     }
 };
 
