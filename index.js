@@ -18,12 +18,12 @@ function Lazyload(opt) {
 
 var proto = {
     start: function() {
-        window.addEventListener('scroll',_scroll.bind(this), false);
-        window.addEventListener('resize',_scroll.bind(this),false);
+        window.addEventListener('scroll', _scroll.bind(this), false);
+        window.addEventListener('resize', _scroll.bind(this), false);
     },
     stop: function() {
-        window.removeEventListener('scroll', _scroll.bind(this),100 false);
-        window.removeEventListener('resize', _scroll.bind(this),100 false);
+        window.removeEventListener('scroll', _scroll.bind(this), false);
+        window.removeEventListener('resize', _scroll.bind(this),  false);
     }
 };
 
@@ -32,11 +32,11 @@ function _update() {
     this.nodes = Array.prototype.slice.call(this.nodes);
     this.nodes.forEach(function(v, i) {
         var node = this.nodes[i];
-        if (node.hasAttribute(this.opt.attr) && _inViewport.call(this,node)) {
+        if (node.hasAttribute(this.opt.attr) && _inViewport.call(this, node)) {
             v.setAttribute('src', v.getAttribute(this.opt.attr));
         }
     }.bind(this))
-     this.ticking=false;
+    this.ticking = false;
 }
 
 function _scroll(e) {
@@ -53,7 +53,7 @@ function _inViewport(node) {
 
     var elementTop = getOffsetTop(node);
     var elementBottom = elementTop + node.offsetHeight;
-    var threshold =(this.opt.threshold/100) *  window.innerHeight;
+    var threshold = (this.opt.threshold / 100) * window.innerHeight;
     return elementBottom >= viewportTop - threshold && elementTop <= viewportBottom + threshold
 }
 
@@ -72,4 +72,6 @@ function getOffsetTop(element) {
 
 Lazyload.prototype = proto;
 
-typeof module == undefined ? module.exports = Lazyload : this[Lazyload] = Lazyload;
+module.exports = {
+    Lazyload: Lazyload
+}
