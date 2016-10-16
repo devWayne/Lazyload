@@ -13,10 +13,16 @@
   "keywords": [
     "load"
   ],
-  "author": "Vi",
+  "author": "Jarvan",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/devWayne/Lazyload/issues"
   },
-  "homepage": "https://github.com/devWayne/Lazyload"
+  "homepage": "https://github.com/devWayne/Lazyload",
+  "devDependencies": {
+    "babel-core": "~6.17.0",
+    "babel-loader": "~6.2.5",
+    "babel-preset-es2015": "~6.16.0",
+    "webpack": "~2.1.0-beta.25"
+  }
 }
