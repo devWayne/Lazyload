@@ -20,11 +20,14 @@ class Lazyload {
     start() {
         window.addEventListener('scroll', this._scroll.bind(this), false);
         window.addEventListener('resize', this._scroll.bind(this), false);
+        window.addEventListener('orientationchange', this._scroll.bind(this), false);
     }
 
     stop() {
         window.removeEventListener('scroll', this._scroll.bind(this), false);
         window.removeEventListener('resize', this._scroll.bind(this), false);
+        window.removeEventListener('orientationchange', this._scroll.bind(this), false);
+
     }
 
 

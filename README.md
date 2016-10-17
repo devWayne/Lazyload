@@ -16,10 +16,3 @@ var lazy=new Lazyload();
 
 ```
 
-
-## API
-
-####.start()
-
-####.stop()
-
